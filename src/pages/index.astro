@@ -10,7 +10,7 @@ import { Icon } from 'astro-icon/components'
     <Icon name="tdesign:store" class="text-accent text-4xl pt-2" />
     <h1 class="text-4xl text-accent font-montserrat font-medium">Store</h1>
   </div>
-  <div class="m-10 flex flex-wrap justify-center items-center" id="storefront">
+  <div class="m-5 lg:m-10 flex flex-wrap justify-center items-center" id="storefront">
   </div>
 </Layout>
 
@@ -22,8 +22,8 @@ Object.keys(response).forEach(key => {
   const storefront = document.getElementById('storefront')
   storefront!.innerHTML += 
   `
-  <div class="card w-96 bg-base-100 shadow-xl m-10">
-    <figure><img class="object-cover h-60 w-96" src=`+ "http://localhost:8080" + response[key].image_dir + `></figure>
+  <div class="card w-full lg:w-96 bg-base-100 shadow-xl my-5 lg:m-10">
+    <figure><img class="object-cover h-60 w-full lg:w-96" src=`+ "http://localhost:8080" + response[key].image_dir + `></figure>
     <div class="card-body">
       <h2 class="card-title">` + response[key].product_name + `</h2>
       <div class="card-actions justify-end">

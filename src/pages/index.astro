@@ -1,15 +1,9 @@
 ---
 import fetch from 'node-fetch';
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import { Icon } from 'astro-icon/components'
 ---
 
 <Layout title="Home">
-  <div class="flex w-full justify-center space-x-3 mt-5">
-    <Icon name="tdesign:store" class="text-accent text-4xl pt-2" />
-    <h1 class="text-4xl text-accent font-montserrat font-medium">Store</h1>
-  </div>
   <div class="m-5 lg:m-10 flex flex-wrap justify-center items-center" id="storefront">
   </div>
 </Layout>

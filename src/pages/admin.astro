@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { baseURL, postJSON } from '../utils/networking';
 if (Astro.request.method === "POST") {
   try {
     const data = await Astro.request.formData();
@@ -10,26 +11,14 @@ if (Astro.request.method === "POST") {
       stock: data.get("stock"),
       image_dir: '/public/images/placeholder.jpg'
     }
-
-    await fetch('http://localhost:8080/api/postProduto', {
-      method: "POST", 
-      mode: "cors", 
-      cache: "no-cache", 
-      credentials: "same-origin", 
-      headers: {
-        "Content-Type": "application/json",
-
-      },
-      redirect: "follow", 
-      referrerPolicy: "no-referrer", 
-      body: JSON.stringify(body), 
-    });
-
-    } catch (error) {
+    postJSON(body, "/api/postProduto")  
+  } catch (error) {
       if (error instanceof Error) {
         console.error(error.message);
       }
     }
+
+
 }
 ---
 <Layout title="Admin">

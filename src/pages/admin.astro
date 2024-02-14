@@ -11,14 +11,12 @@ if (Astro.request.method === "POST") {
       stock: data.get("stock"),
       image_dir: '/public/images/placeholder.jpg'
     }
-    postJSON(body, "/api/postProduto")  
+    postJSON(body, "/api/postProduto")
   } catch (error) {
       if (error instanceof Error) {
         console.error(error.message);
       }
     }
-
-
 }
 ---
 <Layout title="Admin">
